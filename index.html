@@ -19,10 +19,10 @@
             </ul>
         </nav>
         <main>
-            <form method="get" id="formInfosCommandes">
-                <input type="text" name="infosClient" class="inputCommandes" value="Votre nom" id="formNom" onFocus="myFocus(this)" onblur="myBlur(this)">
-                <input type="text" name="infosClient" value="Votre prénom" class="inputCommandes" id="formPrenom" onFocus="myFocus(this)" onblur="myBlur(this)">
-                <input list="listeProduits" value="Votre choix" class="inputCommandes" id="formChoix" onFocus="myFocus(this)" onblur="myBlur(this)">
+            <form method="get" id="formInfosCommandes" onsubmit="return encoderCommande()">
+                <input type="text" name="infosClient" placeholder="Votre nom" class="inputCommandes" id="formNom" autocomplete="off" onFocus="myFocus(this)" onblur="myBlur(this)" required>
+                <input type="text" name="infosClient" placeholder="Votre prénom" class="inputCommandes" id="formPrenom" autocomplete="off" onFocus="myFocus(this)" onblur="myBlur(this)" required>
+                <input list="listeProduits" placeholder="Votre choix" class="inputCommandes" id="formChoix" onFocus="myFocus(this)" onblur="myBlur(this)" required>
                 <datalist id="listeProduits">
                     <option value="Café latte">
                     <option value="Nespresso">
@@ -30,13 +30,12 @@
                     <option value="Chocolat chaud">
                     <option value="Cupcake">
                 </datalist>
-                <input type="button" class="inputCommandes" value="Commander!" onclick="encoderCommande()">
+                <input type="submit" class="inputCommandes" value="Commander!">
             </form>
 
             <div id="panneauDesCommandes">
-                <h2>Liste des commandes</h2>
+                <h2 style="text-decoration: underline">Liste des commandes</h2>
             </div>
-
         </main>
     </body>
 

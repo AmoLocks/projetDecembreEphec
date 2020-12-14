@@ -38,6 +38,17 @@ a{
 
 table{
     background-color: #1c7050;
+    margin: 5px;
+    width: 90%;
+}
+
+td{
+    background-color: whitesmoke;
+    width: 33%;
+}
+
+th{
+    width: 33%;
 }
 
 

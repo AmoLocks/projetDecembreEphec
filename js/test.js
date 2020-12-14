@@ -7,13 +7,13 @@ function encoderCommande(){
     let formChoix = document.getElementById("formChoix").value;
     let tableInfos = [nom, prenom, formChoix];
 
-
     var listeTitres = ["Nom", "Prenom", "Choix"];
     // Récupérer la reference de l'endoit ou injecter la table
     var contenant = document.getElementById("panneauDesCommandes");
 
     // Créer <table> et <tbody>
     var tableau = document.createElement("table");
+    tableau.setAttribute("id", "tableauCommande"); //attribution id au tableau créer
     var tableauBody = document.createElement("tbody");
 
     //Créer les intitulés des collones tableau
@@ -45,16 +45,29 @@ function encoderCommande(){
     contenant.appendChild(tableau);
     // Place des bordures
     tableau.setAttribute("border", "2");
+
+    effacerText("formNom");
+    effacerText("formPrenom");
+    effacerText("formChoix");
+
+    return false; //pour eviter que le form ne parte
 }
 
+//dynamisme de saisie infos
 function myFocus(element) {
     element.value='';
 }
 
+//dynamisme de saisie infos
 function myBlur(element){
     if (element.value == ''){
         element.value = element.defaultValue;
     }
+}
+
+//effacer les saisie précédentes
+function effacerText(element) {
+    document.getElementById(element).value = "";
 }
 
 
