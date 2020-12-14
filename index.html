@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script type="text/javascript" src="js/test.js"></script>
+        <title>Index du Projet</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><img src="img/Logo.png" alt="Logo Café" id="imgLogo"></li>
+                <li><a class="liensMenu" href="">Accueil</a></li>
+                <li><a class="liensMenu" href="">page 1</a></li>
+                <li><a class="liensMenu" href="">page 2</a></li>
+                <li style="float:right"><a href="">Infos</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form method="get" id="formInfosCommandes">
+                <input type="text" name="infosClient" class="inputCommandes" value="Votre nom" id="formNom" onFocus="myFocus(this)" onblur="myBlur(this)">
+                <input type="text" name="infosClient" value="Votre prénom" class="inputCommandes" id="formPrenom" onFocus="myFocus(this)" onblur="myBlur(this)">
+                <input list="listeProduits" value="Votre choix" class="inputCommandes" id="formChoix" onFocus="myFocus(this)" onblur="myBlur(this)">
+                <datalist id="listeProduits">
+                    <option value="Café latte">
+                    <option value="Nespresso">
+                    <option value="Café moka">
+                    <option value="Chocolat chaud">
+                    <option value="Cupcake">
+                </datalist>
+                <input type="button" class="inputCommandes" value="Commander!" onclick="encoderCommande()">
+            </form>
+
+            <div id="panneauDesCommandes">
+                <h2>Liste des commandes</h2>
+            </div>
+
+        </main>
+    </body>
+
+</html>
